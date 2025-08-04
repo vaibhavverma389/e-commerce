@@ -14,21 +14,22 @@ A simple full-stack **E-Commerce Website** built with **Node.js**, **Express**, 
 ## 📁 Folder Structure
 
 e-commerce/
-├── public/ # Static assets (CSS, JS, images)
-│ └── register.css
-├── router/ # Application routes
-│ ├── index.router.js
-│ ├── product.router.js
-│ └── user.router.js
-├── views/ # EJS templates
-│ ├── register.ejs
-│ ├── login.ejs
-│ ├── products.ejs
-│ └── index.ejs
-├── .env # Environment variables
-├── app.js # Express app configuration
-├── server.js # Entry point
-└── README.md # This file
+├── public/               # Static assets (CSS, JS, images)
+│   └── register.css
+├── router/               # Application route handlers
+│   ├── index.router.js
+│   ├── product.router.js
+│   └── user.router.js
+├── views/                # EJS templates for rendering HTML pages
+│   ├── register.ejs
+│   ├── login.ejs
+│   ├── products.ejs
+│   └── index.ejs
+├── .env                  # Environment variables (e.g., MONGO_URI, PORT)
+├── app.js                # Express app configuration
+├── server.js             # Entry point to run the server
+└── README.md             # Project documentation
+
 
 
 
