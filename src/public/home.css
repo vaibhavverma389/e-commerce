@@ -1,4 +1,4 @@
-/* Reset some default spacing */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   padding: 20px;
 }
 
-/* Navbar */
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -33,7 +33,6 @@ nav a:hover {
   background-color: #0056b3;
 }
 
-/* Filter Section */
 .filter {
   margin-bottom: 20px;
 }
@@ -62,14 +61,12 @@ nav a:hover {
   background-color: #2457a9;
 }
 
-/* Products Grid */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 20px;
 }
 
-/* Product Card */
 .card {
   background: white;
   border: 1px solid #ddd;
@@ -104,7 +101,7 @@ nav a:hover {
   margin-bottom: 4px;
 }
 
-/* Action Buttons */
+
 .actions {
   margin-top: 10px;
   display: flex;
