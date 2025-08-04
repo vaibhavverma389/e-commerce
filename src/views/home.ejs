@@ -1,47 +1,56 @@
+<!-- first page -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shop Home</title>
     <link rel="stylesheet" href="/home.css" />
   </head>
   <body>
     <nav>
-      <a href="products/add">Add New Products </a>
-        <% if(decode){ %>
-           <a href="/users/logout">Logout</a>
-        <% } else {%>
-           <a href="/users/login">Login</a>
-        <% } %>
+      <a href="/products/add">➕ Add Product</a>
+      <% if(user){ %>
+        <a href="/users/logout">Logout</a>
+      <% } else { %>
+        <a href="/users/login">Login</a>
+      <% } %>
     </nav>
 
     <div class="filter">
       <form action="/" method="get">
-        <select name="category" >
+        <select name="category">
           <option value="">All Categories</option>
-          <option value="beauty">beauty</option>
-          <option value="furniture">furniture</option>
-          <option value="groceries">groceries</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="books">Books</option>
+          <option value="furniture">Furniture</option>
         </select>
-        <button type="submit">Apply Filter</button>
+        <button type="submit">Filter</button>
       </form>
     </div>
 
     <div class="container">
-      <% products.forEach(elem => { %>
-      <div class="card">
-        <div class="top">
-          <img src="<%= elem.image %>" alt="" />
+      <% products.forEach(product => { %>
+        <div class="card">
+          <div class="top">
+            <img src="<%= product.image %>" alt="Product Image" />
+          </div>
+          <div class="bottom">
+            <h2><%= product.name %></h2>
+            <p><strong>Brand:</strong> <%= product.brand %></p>
+            <p><strong>Price:</strong> ₹<%= product.price %></p>
+            <p><%= product.description.substring(0, 60) %>...</p>
+
+            <div class="actions">
+              <a href="/products/detail/<%= product._id %>">🔍 View</a>
+              <% if(user && user.email === product.sellerEmail){ %>
+                <a href="/products/edit/<%= product._id %>">✏️ Edit</a>
+              <% } %>
+            </div>
+          </div>
         </div>
-        <div class="bottom">
-          <a href="/products/detail/<%= elem._id %>"><h2><%= elem.title %></h2></a>
-          <p><%= elem.description %></p>
-          <h2>Price : <%= elem.price %></h2>
-        </div>
-      </div>
       <% }); %>
     </div>
   </body>
 </html>
-

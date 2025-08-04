@@ -1,0 +1,50 @@
+<!-- add product -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add New Product</title>
+  <link rel="stylesheet" href="/productForm.css" />
+</head>
+<body>
+
+  <h2>Add New Product</h2>
+
+ 
+  <form action="/products/add" enctype="multipart/form-data" method="post">
+
+    <label for="name">Product Name</label><br>
+    <input type="text" name="name" placeholder="Enter product name" required><br><br>
+
+    <label for="image">Product Image</label><br>
+    <input type="file" name="image" required><br><br>
+
+    <label for="brand">Brand</label><br>
+    <input type="text" name="brand" placeholder="Enter brand name" required><br><br>
+
+    <label for="category">Category</label><br>
+    <select name="category">
+          <option value="">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="books">Books</option>
+          <option value="furniture">Furniture</option>
+        </select><br><br>
+
+    <label for="price">Price (₹)</label><br>
+    <input type="number" name="price" placeholder="Enter price" step="0.01" required><br><br>
+
+    <label for="description">Description</label><br>
+    <textarea name="description" rows="6" cols="50" placeholder="Write product description..." required></textarea><br><br>
+
+    <input type="hidden" name="email" value="<%= user ? user.email : '' %>">
+
+    <div class="btn">
+      <button type="submit">Add Product</button>
+    </div>
+
+  </form>
+
+</body>
+</html>

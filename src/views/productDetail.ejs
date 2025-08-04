@@ -1,0 +1,27 @@
+<!-- full D -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= product.name %> - Product Details</title>
+  <link rel="stylesheet" href="/productDetail.css" />
+</head>
+<body>
+  <div class="main">
+    <div class="left">
+      <img src="<%= product.image %>" alt="Product Image" />
+    </div>
+    <div class="right">
+      <div class="top">
+        <h1><%= product.name %></h1>
+        <p><em>Brand: <%= product.brand %></em></p><br>
+        <p><%= product.description %></p><br>
+        <p><strong>Category:</strong> <%= product.category %></p>
+        <p><strong>Price:</strong> ₹<%= product.price %></p>
+        <p><strong>Stock:</strong> <%= product.stock %> units</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
