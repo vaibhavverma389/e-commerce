@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/home.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="products/add">Add New Products </a>
+        <% if(decode){ %>
+           <a href="/users/logout">Logout</a>
+        <% } else {%>
+           <a href="/users/login">Login</a>
+        <% } %>
+    </nav>
+
+    <div class="filter">
+      <form action="/" method="get">
+        <select name="category" >
+          <option value="">All Categories</option>
+          <option value="beauty">beauty</option>
+          <option value="furniture">furniture</option>
+          <option value="groceries">groceries</option>
+        </select>
+        <button type="submit">Apply Filter</button>
+      </form>
+    </div>
+
+    <div class="container">
+      <% products.forEach(elem => { %>
+      <div class="card">
+        <div class="top">
+          <img src="<%= elem.image %>" alt="" />
+        </div>
+        <div class="bottom">
+          <a href="/products/detail/<%= elem._id %>"><h2><%= elem.title %></h2></a>
+          <p><%= elem.description %></p>
+          <h2>Price : <%= elem.price %></h2>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
+
